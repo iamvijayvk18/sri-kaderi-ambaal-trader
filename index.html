@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Kaderi Ambaal Trader - Scrap Metal Trader</title>
+    <meta name="description" content="Sri Kaderi Ambaal Trader: Over 8+ years in scrap metal trading. Best prices, doorstep collection. Buy iron, copper, brass, and more in Devakottai.">
+    <style>
+        /* Reset and base styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: Arial, sans-serif; 
+            line-height: 1.6; 
+            color: #fff; 
+            background: linear-gradient(135deg, #000080 0%, #0000FF 100%); /* Attractive gradient navy blue background */
+            background-image: url('https://as2.ftcdn.net/v2/jpg/05/10/56/03/1000_F_510560348_1inBpaESMTWy0XfwgE2fwE6PwZlXPE7A.jpg'); /* Old scrap image as background */
+            background-size: cover;
+            background-attachment: fixed;
+            background-blend-mode: overlay;
+            animation: backgroundShift 10s infinite alternate; /* Subtle animation for attractiveness */
+        }
+        @keyframes backgroundShift {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+        header { 
+            background: rgba(46, 139, 87, 0.9); /* Semi-transparent green */
+            color: white; 
+            padding: 1rem; 
+            text-align: center; 
+            position: relative; 
+            z-index: 1; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3); 
+        }
+        h1 { color:yellow; font-weight: bold; font-size: 2rem; }
+        nav { 
+            
+            display: flex; 
+            justify-content: center; 
+            background: rgba(34, 139, 34, 0.9); 
+            position: sticky; 
+            top: 0; 
+            z-index: 2; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2); 
+        }
+        nav ul { list-style: none; display: flex; }
+        nav li { margin: 0 1rem; }
+        nav a { 
+            color: white; 
+            text-decoration: none; 
+            padding: 0.5rem; 
+            display: block; 
+            transition: background 0.3s, color 0.3s; 
+            font-weight: bold; 
+        }
+        nav a:hover { 
+            background: rgba(255, 255, 255, 0.2); /* Background change on hover */
+            color: #FFD700; /* Gold color for attractiveness */
+        }
+        .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; }
+        section { 
+            padding: 2rem; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            background: rgba(255, 255, 255, 0.95); 
+            color: #333; 
+            border-radius: 8px; 
+            margin-bottom: 1rem; 
+            text-align: center; /* Improved alignment */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+            transition: transform 0.3s; 
+        }
+        section:hover { transform: translateY(-5px); } /* Subtle hover lift */
+        h2 { 
+            color: red; 
+            text-align: center; 
+            font-weight: bold; 
+            margin-bottom: 1rem; 
+        }
+        .hero { 
+            background: url('https://as2.ftcdn.net/v2/jpg/05/10/56/03/1000_F_510560348_1inBpaESMTWy0XfwgE2fwE6PwZlXPE7A.jpg') no-repeat center/cover; /* Old scrap image for hero */
+            height: 300px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            color: white; 
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
+            position: relative; 
+            border-radius: 8px; 
+        }
+        .hero::before { 
+            content: ''; 
+            position: absolute; 
+            top: 0; left: 0; right: 0; bottom: 0; 
+            background: rgba(0,0,0,0.3); /* Overlay for readability */ 
+        }
+        .hero > div { position: relative; z-index: 1; }
+        .experience { text-align: center; margin-top: 1rem; }
+        .experience h3 { font-weight: bold; }
+        .items { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+            gap: 1rem; 
+            margin-top: 1rem; 
+            justify-items: center; /* Center grid items */
+        }
+        .item { 
+            background: #f9f9f9; 
+            padding: 1rem; 
+            border: 1px solid #ddd; 
+            text-align: center; 
+            border-radius: 4px; 
+            transition: transform 0.3s, background 0.3s; 
+            font-weight: bold; 
+        }
+        .item:hover { 
+            transform: scale(1.05); 
+            background: #e0f7e0; /* Background change on hover */
+        }
+        .testimonials { 
+            display: flex; 
+            overflow-x: auto; 
+            gap: 1rem; 
+            padding: 1rem; 
+            justify-content: center; /* Center testimonials */
+        }
+        .testimonial { 
+            background: #f9f9f9; 
+            padding: 1rem; 
+            min-width: 250px; 
+            border-radius: 4px; 
+            text-align: center; 
+            transition: background 0.3s; 
+        }
+        .testimonial:hover { background: #f0f8f0; } /* Background change on hover */
+        .gallery { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 1rem; 
+            justify-items: center; /* Center gallery items */
+        }
+        .gallery img { 
+            width: 100%; 
+            height: 150px; 
+            object-fit: cover; 
+            border-radius: 4px; 
+            transition: opacity 0.3s, transform 0.3s; 
+        }
+        .gallery img:hover { 
+            opacity: 0.8; 
+            transform: scale(1.05); 
+        }
+        .map { 
+            margin-top: 1rem; 
+            text-align: center; 
+        }
+        .map iframe { 
+            width: 100%; 
+            height: 300px; 
+            border: none; 
+            border-radius: 4px; 
+        }
+        .map a { 
+            display: inline-block; 
+            margin-top: 0.5rem; 
+            padding: 0.5rem 1rem; 
+            background: #2e8b57; 
+            color: white; 
+            text-decoration: none; 
+            border-radius: 4px; 
+            font-weight: bold; 
+            transition: background 0.3s; 
+        }
+        .map a:hover { background: #FFD700; color: #000; } /* Background change on hover */
+        form { max-width: 400px; margin: 0 auto; text-align: left; }
+        input, textarea { 
+            width: 100%; 
+            padding: 0.5rem; 
+            margin: 0.5rem 0; 
+            border: 1px solid #ddd; 
+            border-radius: 4px; 
+            font-weight: bold; 
+        }
+        button { 
+            background: #2e8b57; 
+            color: white; 
+            padding: 0.5rem; 
+            border: none; 
+            cursor: pointer; 
+            border-radius: 4px; 
+            transition: background 0.3s; 
+            width: 100%; 
+            font-weight: bold; 
+        }
+        button:hover { background: #FFD700; color: #000; } /* Background change on hover */
+        .whatsapp-btn { 
+            background: #25d366; /* WhatsApp green */
+            margin-top: 1rem; 
+        }
+        .whatsapp-btn:hover { background: #FFD700; color: #000; } /* Background change on hover */
+        footer { 
+            background: rgba(51, 51, 51, 0.9); 
+            color: white; 
+            text-align: center; 
+            padding: 1rem; 
+            position: relative; 
+            z-index: 1; 
+            font-weight: bold; 
+        }
+        /* Enhanced Mobile responsiveness */
+        @media (max-width: 768px) {
+            nav ul { display: none; flex-direction: column; }
+            nav ul.show { display: flex; }
+            .menu-toggle { display: block; }
+            .testimonials { flex-direction: column; align-items: center; }
+            section { padding: 1rem; }
+            .hero { height: 200px; }
+            .items { grid-template-columns: 1fr; }
+            .gallery { grid-template-columns: 1fr; }
+            .map iframe { height: 250px; }
+            h1 { font-size: 1.5rem; }
+            h2 { font-size: 1.2rem; }
+            p { font-size: 0.9rem; }
+        }
+        @media (max-width: 480px) {
+            section { padding: 0.5rem; }
+            .hero { height: 150px; }
+            .map iframe { height: 200px; }
+        }
+        h3{
+            color:#0000FF;
+            
+            
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sri Kaderi Ambaal Traders</h1>
+        <h3>contact:8531090804/9626868649</h3>
+        <p>Your Trusted Scrap Metal Partner</p>
+    </header>
+    <nav>
+        <div class="menu-toggle" onclick="toggleMenu()">☰ Menu</div>
+        <ul id="nav-menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <section id="home" class="hero">
+        <div>
+            <h2>Welcome to Sri Kaderi Ambaal Trader</h2>
+            <p>Specializing in scrap metal trading with over 8+ years of experience.</p>
+            <div class="experience">
+                <h3>Our Experience</h3>
+                <p>With over 8+ years in the industry, we have built a reputation for reliability, fair pricing, and eco-friendly practices. Our team ensures every transaction is smooth and profitable for you.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We are here with over 8+ years of experience in the scrap metal trading industry. We provide the best market prices for your scrap and offer convenient doorstep collection services to make the process hassle-free for our customers.</p>
+        <p><strong>Address:</strong> Karuthaoorani, Devakottai-630302</p>
+        <p><strong>Phone:</strong> 9626868649 / 8531090804</p>
+        <div class="map">
+            <h3>Our Location</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.768!2d78.1234!3d10.9876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baaf8c8c8c8c8c8:0x1234567890abcdef!2zMTDCsDU5JzE1LjYiTiA3OMKwMDcnMjQuMyJF!5e0!3m2!1sen!2sus!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <a href="https://maps.app.goo.gl/RzY26uNtxDwjqes7A" target="_blank">View on Google Maps & Share Location</a>
+        </div>
+    </section>
+    
+    <section id="services">
+        <h2>Items We Buy</h2>
+        <p>We purchase a wide range of scrap materials at competitive rates.</p>
+        <div class="items">
+            <div class="item">1. Iron</div>
+            <div class="item">2. MS Bundle</div>
+            <div class="item">3. Tin</div>
+            <div class="item">4. Cardboard</div>
+            <div class="item">5. Plastic</div>
+            <div class="item">6. Copper</div>
+            <div class="item">7. Brass</div>
+            <div class="item">8. Aluminium</div>
+        </div>
+    </section>
+    
+    <section id="testimonials">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonials">
+            <div class="testimonial">
+                <p>"Great service and fair prices! Doorstep collection made it easy."</p>
+                <cite>- Customer A</cite>
+            </div>
+            <div class="testimonial">
+                <p>"Over 8 years of trust. Highly recommend for scrap trading."</p>
+                <cite>- Customer B</cite>
+            </div>
+            <div class="testimonial">
+                <p>"Professional and reliable. Best in Devakottai."</p>
+                <cite>- Customer C</cite>
+            </div>
+        </div>
+    </section>
+    
+    <section id="gallery">
+        <h2>Our Shop Gallery</h2>
+        <div class="gallery">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Old Scrap Iron Piles">
+            <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Old Cardboard Scrap">
+            <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Rusty Iron Scrap">
+            <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Cardboard Recycling">
+        </div>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Get a quote or send us a message. We'll respond via WhatsApp!</p>
+        <form id="contact-form">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Message" rows="4" required></textarea>
+            <button type="submit">Send via WhatsApp</button>
+        </form>
+        <button class="whatsapp-btn" onclick="openWhatsApp()">WhatsApp Us</button>
+    </section>
+    
+    <footer>
+        <p>&copy; 2026 Sri Kaderi Ambaal Trader. All rights reserved. | <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p>
+   <p>website created by vijay</p>
+    </footer>
+    
+    <script>
+        // Toggle mobile menu
+        function toggleMenu() {
+            const menu = document.getElementById('nav-menu');
+            menu.classList.toggle('show');
+        }
+        
+        // WhatsApp form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            const whatsappMessage = `Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+            const whatsappURL = `https://wa.me/9626868649?text=${whatsappMessage}`;
+            window.open(whatsappURL, '_blank');
+            this.reset();
+        });
+        
+        // Direct WhatsApp button
+        function openWhatsApp() {
+            const whatsappURL = `https://wa.me/9626868649?text=Hello, I am interested in your scrap metal services.`;
+            window.open(whatsappURL, '_blank');
+        }
+    </script>
+</body>
+</html>
